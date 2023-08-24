@@ -1,17 +1,71 @@
+.parent {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr repeat(3, 1fr);
+  grid-template-rows: 0.4fr repeat(3, 1fr) 0.4fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  }
+  
+  .navbar {
+    
+    background-color: #d8d8d8;
+    grid-area: 1 / 1 / 2 / 6; }
+  .aside-a {  
+    background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  text-align: center;
+  max-width: 600px;
+  border-radius: 25px;
+  padding: 20px;
+    border-radius: 25px;
+
+    margin: 0 30px;
+    background-color: #ffffff; 
+    grid-area: 2 / 1 / 5 / 2; }
+  .main { grid-area: 2 / 2 / 5 / 5; }
+  .aside-b { 
+    background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  text-align: center;
+  max-width: 600px;
+  border-radius: 25px;
+  padding: 20px;
+    border-radius: 25px;
+
+    margin: 0 30px;
+    background-color: rgb(255, 255, 255);
+    grid-area: 2 / 5 / 5 / 6; }
+  .footer { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d8d8d8;
+     grid-area: 5 / 1 / 6 / 6; }
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   background-color: #f7f7f7;
 }
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon{    margin-left: 10px;
 
+  margin-top: 10px;
+}
 .container {
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
-  margin-top: 50px;
   text-align: center;
   max-width: 600px;
-  border-radius: 5px;
+  border-radius: 25px;
   padding: 20px;
 }
 
@@ -23,14 +77,19 @@ form {
 }
 
 form input[type="text"] {
+  border-radius: 25px;
   padding: 10px;
   border: none;
   outline: none;
   font-size: 18px;
   width: 60%;
 }
-
+#submit{
+  margin: 0px 15px;
+  border-radius: 25px;
+}
 form input[type="submit"] {
+  border-radius: 25px;
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -55,6 +114,7 @@ form input[type="submit"]:hover {
 }
 
 .temperature {
+  
   font-size: 48px;
   font-weight: bold;
   margin: 20px 0;
@@ -91,4 +151,60 @@ form input[type="submit"]:hover {
         width: 100%;
         margin-bottom: 10px;
     }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #000000;
+  
+}
+.dark-mode .header{
+  color: #ffffff;
+}
+
+.dark-mode .aside-a {
+  background-color: #202020;
+}
+.dark-mode .aside-b{
+  background-color: #202020;
+}
+.dark-mode .navbar{
+  background-color: #202020;
+}
+.dark-mode .container {
+  background-color: #202020;
+}
+.dark-mode .temperature{
+  color: #ffffff;
+}
+.dark-mode .description{
+  color: #ffffff;
+}
+.dark-mode .footer{
+  color: #ffffff;
+  background-color: #202020;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.dark-mode-toggle label {
+  margin-right: 5px;
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+  transform: scale(1.5);
+}
+.icon {
+  font-size: 20px;
+  cursor: pointer; /* Add this line to make the icon cursor change on hover */
 }

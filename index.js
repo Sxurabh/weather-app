@@ -2,6 +2,36 @@ const apikey = "46f80a02ecae410460d59960ded6e1c6";
 const weatherDataEl = document.getElementById("weather-data");
 const cityInputEl = document.getElementById("city-input");
 const formEl = document.querySelector("form");
+const darkModeCheckbox = document.getElementById("darkModeCheckbox");
+
+  const darkModeIcon = document.getElementById("darkModeIcon");
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const darkModeIcon = document.getElementById("darkModeIcon");
+  
+    // Check if dark mode preference is stored in localStorage
+    const isDarkModePreferred = localStorage.getItem("darkMode") === "true";
+  
+    // Apply dark mode if preferred
+    if (isDarkModePreferred) {
+      document.body.classList.add("dark-mode");
+      darkModeIcon.textContent = "🌙"; // Set icon for dark mode
+    } else {
+      document.body.classList.add("light-mode");
+      darkModeIcon.textContent = "☀️"; // Set icon for light mode
+    }
+  
+    darkModeIcon.addEventListener("click", () => {
+      const isDarkMode = document.body.classList.toggle("dark-mode");
+      darkModeIcon.textContent = isDarkMode ? "🌙" : "☀️";
+  
+      // Store the user's dark mode preference in localStorage
+      localStorage.setItem("darkMode", isDarkMode);
+    });
+  
+    // ... (other code)
+  });
+  
 
 formEl.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -37,7 +67,7 @@ function updateWeatherUI(data) {
     `Wind speed: ${data.wind.speed} m/s`,
   ];
 
-  weatherDataEl.querySelector(".icon").innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">`;
+  weatherDataEl.querySelector(".icon").innerHTML = `<img src="lightrain.png" alt="Weather Icon">`;
   weatherDataEl.querySelector(".temperature").textContent = `${temperature}°C`;
   weatherDataEl.querySelector(".description").textContent = description;
   weatherDataEl.querySelector(".details").innerHTML = details
