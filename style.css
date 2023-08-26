@@ -27,6 +27,27 @@
   background-color: #ffffff;
   grid-area: 2 / 1 / 5 / 2;
 }
+.popularContainer{
+  display: flex;
+align-items: center;
+justify-content: space-evenly;
+
+  flex-direction: column;
+
+  border: 1px;
+  border-radius: 25px;
+  height: 85%;
+  width: auto;
+  background-color: #e9ebf3;
+}
+.popularCity{
+  border: 1px;
+  border-radius: 15px;
+  width: 80%;
+  background-color: #b5c7fb;
+  height: 15%;
+}
+
 .main {
   grid-area: 2 / 2 / 5 / 5;
 }
